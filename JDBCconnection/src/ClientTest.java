@@ -16,12 +16,16 @@ public class ClientTest {
             String sql = "select * from mytable";
             ResultSet rs = st.executeQuery(sql);
 
-            while (rs.next()){
-                System.out.println(rs.getInt(1));
-                System.out.println(rs.getString(2));
-                System.out.println(rs.getInt(3));
-                System.out.println(rs.getString(4));
-            }
+//            while (rs.next()){
+//                System.out.println(rs.getInt(1));
+//                System.out.println(rs.getString(2));
+//                System.out.println(rs.getInt(3));
+//                System.out.println(rs.getString(4));
+//            }
+            String sqlu="insert into mytable(ID," +
+                    "Name,Age,Division) values(9,'kajal','23','B')" ;
+            int n=st.executeUpdate(sqlu);
+            System.out.println(n + "row"+ "afftected");
             try{
                 connection.close();
                 st.close();
